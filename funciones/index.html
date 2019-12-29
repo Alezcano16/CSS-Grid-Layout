@@ -11,13 +11,8 @@
         }
         .container{
             display: grid;
-            /* grid-template-columns: 25% 50% 25%; */
-            /* grid-template-rows: auto 300px; */
-            /* grid-template: filas / columnas; */
-            grid-template: auto 300px / 25% 50% 25%;
-            /* grid-column-gap: 10px;
-            grid-row-gap: 10px; */
-            /* grid-gap: filas  columnas; */
+            /* grid-template: auto 300px / 1fr 1fr 1fr; */
+            grid-template: auto 300px / repeat( 4, minmax( 200px, 1fr ));
             grid-gap: 10px 10px;
         }
         .item{
