@@ -13,14 +13,14 @@
         .container{
             display: grid;
             /* grid-template: auto 300px / 1fr 1fr 1fr; */
-            grid-template:  repeat(4, 100px) / repeat(3, 200px);
+            grid-template:  repeat(4, 1fr) / repeat(3, 1fr);
             grid-gap: 5px;
             height: 100vh;
             grid-auto-rows: 1fr;
-            /* justify-content: start end center stretch space-around space-between space-evenly; Alineado Horizontal*/
-            /* align-content: start end center stretch space-around space-between space-evenly;Alineado Vertical */
-            justify-content: center;
-            align-content: center;
+            /* justify-items: start end center stretch; Alineado Horizontal*/
+            /* align-items: start end center stretch; Alineado Vertical */
+            justify-items: center;
+            align-items: center;
         }
         .item{
             background: lightblue;
@@ -28,8 +28,8 @@
             border: 1px solid red;
         }
         .item:nth-of-type(5){
-            /* align-self: start;
-            justify-self:center ; */
+            align-self: start;
+            justify-self:center ;
         }
     </style>
 </head>
