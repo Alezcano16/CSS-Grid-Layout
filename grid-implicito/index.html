@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tamaño de item en columnas</title>
+    <style>
+        body{
+            font-family: arial;
+            margin: 0px;
+        }
+        .container{
+            display: grid;
+            /* grid-template: auto 300px / 1fr 1fr 1fr; */
+            grid-template:  [boxL1] 1fr [boxL2] 1fr [boxL3] 1fr [boxL4] 1fr / [destacado] 1fr [boxC2] 1fr [boxC3]  1fr [destacado-end] 1fr [boxC5] 1fr [destacado2-end] 1fr [boxC7] 1fr [fin];
+            grid-gap: 5px;
+            height: 100vh;
+            grid-auto-rows: 1fr;
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        .item:nth-of-type(1){
+            background: blue;
+            grid-column: destacado / fin;
+            grid-row:boxL1 / boxL3;
+            /* grid-column: 1 / -1;
+            grid-row: 1 / span 2; */
+        }
+        .item:nth-of-type(2){
+            grid-column: destacado  / destacado-end;
+            grid-row:boxL3 / -1;
+            /* grid-column: 1 / span 3;
+            grid-row: 3 / span 2; */
+        }
+        .item:nth-of-type(3){
+            grid-column: destacado-end  / destacado2-end;
+            grid-row:boxL3 / -1;
+            /* grid-column: 4 / span 2;
+            grid-row: 3 / span 2; */
+        }
+        .item:nth-of-type(4){
+            grid-column: destacado2-end  / fin;
+
+            /* grid-column: 6 / span 2; */
+        }
+        /*
+        .item:nth-of-type(5){
+            background: yellow;
+            grid-column: 6 / span 1;
+            grid-row: 4 / 5;
+        }
+        .item:nth-of-type(6){
+            background: yellow;
+            grid-column: 7 / span 1;
+            grid-row: 4 / 5;
+        } */
+
+    </style>
+</head>
+<body>
+    <!-- .item{contenido #$}*12 //EMED-->
+    <section class="container">
+        <div class="item">Slider</div>
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+    </section>
+</body>
+</html>
